@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package models;
 
-/**
- *
- * @author YME
- */
 public class Student {
 
     public int getId() {
@@ -58,7 +49,7 @@ public class Student {
     
     public static String[] studentKolone() {
         String[] kolone = {
-            "Ime", "Prezime", "GodinaStudija", "Smjer", "Id"
+            "Ime", "Prezime", "GodinaStudija", "Smjer", ""
         };
         return kolone;
     }
