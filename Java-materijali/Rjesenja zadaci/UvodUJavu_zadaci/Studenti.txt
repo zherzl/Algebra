@@ -1,0 +1,5 @@
+5;Miro;Mirić;2;Programsko inženjerstvo;Java|Razvoj Web aplikacija|Uvod u baze podataka;
+3;Ivo;Ivić;1;Sistemsko inženjerstvo;Matematika 1|Digitalna elektronika;Uvod u baze podataka;Uvod u računalne mreže;
+4;Juro;Mirić;3;Programsko inženjerstvo;Prisup podacima iz programskog koda|Interoperabilnost Inf. sustava|Izrada aplikacija za mobilne uređaje;
+2;Marko;Marić;2;Sistemsko inženjerstvo;Kolaboracijski sustavi|Organizacija i management|Virtualizacija;
+1;Ivan;Horvat;1;Multimedijsko računarstvo;Engleski jezik za IT|Programiranje|Građa računala;
