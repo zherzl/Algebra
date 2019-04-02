@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var imena = [];
+        do {
+            imena.push(prompt("Ime i prezime:", ""));
+        } while (confirm("Ponovi?"));
+
+        var ispis = "";
+        for (var i = 0; i < imena.length; i++) {
+            var indexRazmaka = imena[i].indexOf(" ");
+            ime = imena[i].substring(0, indexRazmaka);
+            ispis += ime + "\n";
+        }
+        alert(ispis);
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Javascript</title>
+    <script>
+        var a, b, racOperacija;
+
+        function Start()
+        {            
+            do {
+                UnosBrojeva();
+                UnosRacunskeOperacije();
+                IspisRezultata(a, b, racOperacija);
+            } while (confirm("Ponovno?"));
+        }
+        function UnosBrojeva() {
+            var aMarker = false;
+            var bMarker = false;
+            var racOperacijaMarker = false;
+
+            do {
+                if (aMarker)
+                    KriviUnos("broj");
+                aMarker = true;
+                a = Number(prompt("Broj A:", ""));
+                /*
+                    Ako se ne unese broj a=NaN
+                    Ako se klikne Cancel u prompt prozoru a=null
+                    ako null omotamo u Number a=0
+                */
+                console.log("A: " + a);
+            } while (isNaN(a));
+
+            do {
+                if (bMarker)
+                    KriviUnos("broj");
+                b = Number(prompt("Broj B:", ""));
+                bMarker = true;
+                console.log("B: " + b);
+            } while (isNaN(b));
+        }
+        function UnosRacunskeOperacije() {
+            racOperacija = prompt("Računska operacija: ", "+");
+            if (racOperacija != "+" &&
+                racOperacija != "-" &&
+                racOperacija != "*" &&
+                racOperacija != "/")
+            {
+                KriviUnos("racOperacija");
+                UnosRacunskeOperacije();
+            }            
+        }
+
+        function KriviUnos(podatak) {
+            if (podatak == "broj")
+                alert("Krivi unos broja!\nMolimo Vas unesite ispravnu vrijednost!");
+            else if (podatak == "racOperacija") {
+                var poruka = "Krivi unos računske operacije!";
+                poruka += "\n";
+                poruka += "Ispravne računske operacije: + - * /";
+                poruka += "\n";
+                poruka += "Molimo Vas ispravno unesite računsku operaciju!";
+                alert(poruka);
+            }
+            else
+                alert("Krivi poziv funkcije KriviUnos()");
+        }
+
+        function Rezultat(brojA, brojB, racunskaOperacija)
+        {            
+            switch (racunskaOperacija) {
+                case "+":
+                    return brojA + brojB;
+                    break;
+                case "-":
+                    return brojA - brojB;
+                    break;
+                case "*":
+                    return brojA * brojB;
+                    break;
+                case "/":
+                    if (brojB == 0) {                        
+                        return "Zabranjeno je dijeliti s 0!";
+                    }
+                    var brojDecimalnihMjesta;
+                    do {
+                        brojDecimalnihMjesta = Number(prompt("Broj decimalnih mjesta:", "2"));
+                    } while (isNaN(brojDecimalnihMjesta));
+                    return (brojA / brojB).toFixed(brojDecimalnihMjesta);
+                    break;
+            }
+        }
+
+        function IspisRezultata(a, b, racunskaOperacija)
+        {
+            alert(a + racunskaOperacija + b + "=" + Rezultat(a, b, racunskaOperacija));
+        }
+
+    </script>
+    <style>
+        body {
+            margin:0;
+            padding:0;
+        }
+        a {
+            font-family:'Segoe UI';
+            display:block;
+            text-align:center;
+            font-size:5em;
+            background-color:#333;
+            color:white;
+            text-decoration:none;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" onclick="Start();">START</a>
+</body>
+</html>

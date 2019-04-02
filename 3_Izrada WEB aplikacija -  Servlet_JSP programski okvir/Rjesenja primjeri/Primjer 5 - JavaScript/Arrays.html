@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function UnosStudenata() {
+            var poljeStudenata = new Array();
+            do {
+                var podaciStudenta = new Array();
+                podaciStudenta.push(prompt("Ime:", ""));
+                podaciStudenta.push(prompt("Prezime:", ""));
+                podaciStudenta.push(prompt("E-mail:", ""));
+
+                poljeStudenata.push(podaciStudenta);
+            } while (confirm("Dodati još studenata?"));
+
+            var ispis = "";
+
+            for (var i = 0; i < poljeStudenata.length; i++) {
+                var ime = poljeStudenata[i][0];
+                var prezime = poljeStudenata[i][1];
+                var email = poljeStudenata[i][2];
+                ispis += ime + " " + prezime + ", " + email + "\n";
+            }
+            alert(ispis);
+        }
+        function UnosImena() {
+            var imena = [];
+            do {
+                imena.push(prompt("Ime:", ""));
+            } while (confirm("Dodati još imena?"));
+
+            var sortiranje = Number(prompt("SORTIRANJE\n1.Uzlazno\n2.Silazno", "1"));
+            switch (sortiranje) {
+                case 1:
+                    imena.sort();
+                    break;
+                case 2:
+                    imena.sort().reverse();
+                    break;
+                default:
+            }
+            IspisImena(imena);
+        }
+        function IspisImena(poljeImena) {
+            ispis = "";
+            for (var i = 0; i < poljeImena.length; i++) {
+                ispis += poljeImena[i] + "\n";
+            }
+            alert(ispis);
+        }
+    </script>
+</head>
+<body>
+    <a href="#" onclick="UnosImena()">Upis imena</a> | 
+    <a href="#" onclick="UnosStudenata()">Upis studenata</a>
+</body>
+</html>

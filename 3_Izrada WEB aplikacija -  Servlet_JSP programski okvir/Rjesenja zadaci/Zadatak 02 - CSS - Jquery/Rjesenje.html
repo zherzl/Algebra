@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>CSS Zadatak</title>
+    <meta name="author" content="" />
+    <meta name="keywords" content="Zadatak 2"/>
+    <link href="zadaca.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="skripte/jquery-1.11.1.min.js"></script>
+    <script>
+        $(function () {
+            Eventi();
+            PopuniSelectListu();
+            PrikaziSliku();
+            $(document).keyup(onkeypress);
+        });
+
+        var indexSlike = 0;
+        var images = [
+                { name: "slika 1", url: "slika1.jpg" },
+                { name: "slika 2", url: "slika2.jpg" },
+                { name: "slika 3", url: "slika3.jpg" },
+                { name: "slika 4", url: "slika4.jpg" },
+        ];
+
+        function PopuniSelectListu() {
+            var selectLista = document.getElementById("dropdown");
+
+            for (var i = 0; i < images.length; i++) {
+                var option = document.createElement("option");
+                option.value = images[i].url;
+                option.innerHTML = images[i].name;
+                selectLista.appendChild(option);
+            }
+        }
+
+        function onkeypress(e) {
+            // Strelice lijevo - desno
+            if (e.keyCode == 37) {
+                indexSlike--;
+                indexSlike < 0 ? indexSlike = images.length - 1: indexSlike
+                PrikaziSliku();
+            }
+            else if (e.keyCode == 39) {
+                indexSlike++;
+                indexSlike > images.length - 1 ? indexSlike = 0 : indexSlike
+                PrikaziSliku();
+
+            }
+        }
+
+        function Eventi() {
+            $("a").click(function LinkEventi() {
+
+                var objekt = this.id; // this nije isto kao u javi
+                switch (objekt) {
+                    case "prethodna":
+                        indexSlike--;
+                        indexSlike < 0 ? indexSlike = images.length - 1 : indexSlike
+                        break;
+                    case "slijedeca":
+                        indexSlike++;
+                        indexSlike > images.length - 1 ? indexSlike = 0 : indexSlike
+                        break;
+                }
+                
+                PrikaziSliku();
+            });
+
+            $("select").change(function () {
+                var selectLista = document.getElementById("dropdown");
+                if (selectLista.selectedIndex == 0) {
+                    alert('Nije odabrana slika');
+                }
+                else {
+                    indexSlike = selectLista.selectedIndex - 1;
+                    PrikaziSliku()
+                }
+            });
+        }
+
+        
+
+        function PrikaziSliku() {
+            var novaSlika = "slike/slika" + (indexSlike + 1) + ".jpg" 
+            var slikaZaIzmjenu = document.getElementById("slika");
+
+            $(slikaZaIzmjenu).fadeOut(1);
+            slikaZaIzmjenu.src = novaSlika; //img;
+            $(slikaZaIzmjenu).fadeIn(250);
+
+            var naslov = $("#naslov"); // javascript: document.getElementById("naslov");
+            $(naslov).text(novaSlika);
+        }
+        
+       
+
+    </script>
+
+</head>
+<body>
+    <div id="main">
+        <h1 id="naslov"></h1>
+        <div id="galerija">
+            <img id="slika" src="" alt="Slika" />
+        </div>
+        <div id="strelice">
+            <a href="#" id="prethodna" > <img src="slike/strijela_left.png" alt="slikalijevo" /> </a> 
+            &nbsp;&nbsp;
+            <a href="#" id="slijedeca" > <img src="slike/strijela_right.png" alt="slikadesno" /> </a>
+        </div>
+        <div id="dropdownContainer">
+            <select id="dropdown" name="ddlSlike">
+                <option value="prazno" >---Odaberi sliku---</option>
+            </select>
+        </div>
+    </div>
+</body>
+</html>

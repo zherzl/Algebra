@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;" charset="windows-1250"/>
+		<meta name="author" content="Zlatko Herzl" />
+		<title>SUPIT - domaća zadaća 1</title>
+	</head>
+	<body bgcolor="#3B6A91" text="white">
+		<h1 align="center">Prodaja automobila</h1>
+		<hr />
+		
+		<form action="http://www.fulek.com/bfspace/SUPIT/DZ1.aspx " method="POST">
+			<!--FORMA-->
+			<fieldset>
+				<legend><strong>PODACI O KUPCU</strong></legend>
+				<table cellpadding="4" 
+						cellspacing="0" 
+						frame="hsides" 
+						width="30%" 
+						rules="rows">
+					<tr>
+						<td width="80px" align="right">Ime:</td>
+						<td width="150px" >
+							<input type="text" name="ime" placeholder="Unesite ime..." required autofocus autocomplete="off"  />
+						</td>
+					</tr>
+					<tr>
+						<td align="right">Prezime:</td>
+						<td>
+							<input type="text" name="prezime" placeholder="Unesite prezime..." required  />
+						</td>
+					</tr>
+					<tr>
+						<td align="right">Pozivni:</td>
+						<td>
+							<select name="pozivni">
+								<option>091</option>
+								<option>092</option>
+								<option>095</option>
+								<option>097</option>
+								<option>098</option>
+								<option>099</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">Telefon:</td>
+						<td>
+							<input type="tel" name="telefon" placeholder="Telefonski broj bez razmaka" />
+						</td>
+					</tr>
+					<tr>
+						<td align="right">E-mail:</td>
+						<td>
+							<input type="email" value="@" name="mail"  />
+						</td>
+					</tr>
+					<tr>
+						<td align="right">Stručna sprema:</td>
+						<td>
+							
+								<input id="rbSSS" type="radio" value="SSS" name="ss" checked/> 
+								<label for="rbSSS" name="labelSSS" >SSS</label>
+							
+								<input id="rbVS" type="radio" value="VS" name="ss"/> 
+								<label for="rbVS" name="labelVS" >VŠS</label>
+							
+								<input id="rbVSS" type="radio" value="VSS" name="ss"/> 
+								<label for="rbVSS" name="labelVS" >VSS</label>
+						</td>
+					</tr>
+					
+				</table>
+			</fieldset>
+			
+			<fieldset>
+				<legend><strong>NARUDŽBA</strong></legend>
+				<table cellpadding="4" 
+						cellspacing="0" 
+						rules="rows" 
+						>
+					<tr>
+						<td align="right">Kreditna kartica:</td>
+						<td valign="top">
+							<select id="selectKK" name="kk">
+								<option>AmericanExxpress</option>
+								<option>MasterCard</option>
+								<option>Visa</option>
+							</select>
+						</td>
+						<td align="left">Odabir auta:</td>
+					
+					</tr>
+					<tr>
+						<td valign="top" align="right">Broj kreditne kartice:</td>
+						<td valign="top">
+							<input type="text" name="bkk" />
+						</td>
+						<td rowspan="6" valign="top" align="left">
+							<select size="8" id="selectAuto" name="auto" required>
+								<optgroup label="Volkswagen">
+									<option>Golf</option>
+									<option>Passat</option>
+									<option>Polo</option>
+								</optgroup>
+								<optgroup label="Audi">
+									<option>A2</option>
+									<option>A4</option>
+									<option>A6</option>
+								</optgroup>
+							</select>
+						</td>
+						<td rowspan="6">
+							<image src="auto.png" width="300px" />
+						</td>
+					</tr>
+					
+					
+					<tr>
+						<td valign="center" align="right">Vrijedi do (d/m/g):</td>
+						<td valign="top" >
+							<select id="selectDan" name="dan">
+									<option>Dan</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>10</option>
+									<option>11</option>
+									<option>12</option>
+									<option>13</option>
+									<option>14</option>
+									<option>15</option>
+									<option>16</option>
+									<option>17</option>
+									<option>18</option>
+									<option>19</option>
+									<option>20</option>
+									<option>21</option>
+									<option>22</option>
+									<option>23</option>
+									<option>24</option>
+									<option>25</option>
+									<option>26</option>
+									<option>27</option>
+									<option>28</option>
+									<option>29</option>
+									<option>30</option>
+									<option>31</option>
+							</select>
+							<select id="selectMjesec" name="mjesec">
+									<option>Mjesec</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>10</option>
+									<option>11</option>
+									<option>12</option>
+							</select>
+							<br/>
+							<select id="selectGodina" name="godina">
+									<option>Godina</option>
+									<option>2011</option>
+									<option>2012</option>
+									<option>2013</option>
+									<option>2014</option>
+									<option>2015</option>
+									<option>2016</option>
+									<option>2017</option>
+									<option>2018</option>
+									<option>2019</option>
+									<option>2020</option>
+							</select>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>Pošalji potvrdu na e-mail:</td>
+						<td>
+							<input type="checkbox" name="potvrda" checked/>
+						</td>
+					</tr>
+					
+					<tr>
+						<td valign="top" align="right">Sigurnosni kod:</td>
+						<td valign="top">
+							<input type="password" name="skod" />
+						</td>
+					
+					</tr>
+					<tr>
+						<td alignt="right">Odabir boje:</td>
+						<td>
+							<input type="color" name="boja"/>
+						</td>
+						
+					</tr>
+					<tr>
+						<td > <br/> </td>
+					</tr>
+				</table>
+			</fieldset>
+			<br/>
+			<input type="submit" value="Pošalji"></submit>
+			<input type="reset" value="Obriši"></reset>
+			<br/><br/><br/><br/>
+		</form>
+		
+		
+		<hr/>
+		<p align="center">SUPIT - Domaća zadaća 1</p>
+	</body>
+</html>

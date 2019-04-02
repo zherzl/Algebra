@@ -1,0 +1,7 @@
+Poglavlja iz priručnika SUPIT:
+2. Uvod u HTML
+3. Napredni HTML
+5. Uvod u CSS
+6. Napredni CSS
+7. Osnove JavaScript
+9. Uvod u XML (potpoglavlja 9.1 - 9.5)

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Obrazac 2/3</title>
+</head>
+<body>
+    <form action="Obrazac3.html" method="get">
+        <input type="hidden" name="ime" value="Pero" />
+        <input type="hidden" name="prezime" value="Perić" />
+        <fieldset>
+            <legend>
+                Podaci o prebivalištu 2/3 <progress value="2" max="3"></progress>
+            </legend>
+            <table>
+                <tr>
+                    <td><label for="ulica">Ulica:</label></td>
+                    <td>
+                        <input type="text" name="ulica" id="ulica" required autofocus autocomplete="on" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="broj">Broj:</label></td>
+                    <td>
+                        <input type="number" name="broj" id="broj" min="1" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="grad">Grad:</label></td>
+                    <td>
+                        <select id="grad">
+                            <option value="ZG">Zagreb</option>
+                            <option value="RI">Rijeka</option>
+                            <option value="ST">Split</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nekretnina:</td>
+                    <td>
+                        <label>
+                            Vlasništvo
+                            <input type="radio" name="nekretnina" value="vlasnistvo" checked />
+                        </label>
+                        <label>
+                            Najam
+                            <input type="radio" name="nekretnina" value="najam" />
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Br. stanara:</td>
+                    <td>
+                        <input type="number" name="brojStanara" list="podaci" autocomplete="off" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="submit" value="Dalje >" />
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+
+    <datalist id="podaci">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </datalist>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>TecajServlet</servlet-name>
+        <servlet-class>com.kontejner.example.TecajServlet</servlet-class>
+        <init-param>
+            <param-name>tecajEUR</param-name>
+            <param-value>7.4</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>WelcomeServlet</servlet-name>
+        <servlet-class>com.kontejner.example.WelcomeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SecureServlet</servlet-name>
+        <servlet-class>com.kontejner.example.SecureServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TecajServlet</servlet-name>
+        <url-pattern>/Tecaj</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>WelcomeServlet</servlet-name>
+        <url-pattern>/Welcome</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SecureServlet</servlet-name>
+        <url-pattern>/Secure</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

@@ -1,0 +1,4 @@
+Zadatak 8 proizvoljno riješiti s najboljim praksama, držati se odvajanja logike.
+Iskoristiti do sada naučeno i primijeniti u aplikaciji.
+Dizajn: Do your best;
+Funkcionalnosti: Do your best;

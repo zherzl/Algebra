@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <display-name>NapredniJSP</display-name>
+    <context-param>
+        <description>Jezik aplikacije</description>
+        <param-name>jezik</param-name>
+        <param-value>hrvatski</param-value>
+    </context-param>
+    <servlet>
+        <servlet-name>ConfigPrimjer</servlet-name>
+        <jsp-file>/configPrimjer.jsp</jsp-file>
+        <init-param>
+            <param-name>tecaj</param-name>
+            <param-value>7.4</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConfigPrimjer</servlet-name>
+        <url-pattern>/tecaj</url-pattern>
+    </servlet-mapping>
+    <!--  direktno adresiranje JSP -->
+    <servlet-mapping>
+        <servlet-name>ConfigPrimjer</servlet-name>
+        <url-pattern>/configPrimjer.jsp</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
